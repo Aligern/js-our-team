@@ -1,4 +1,3 @@
-
 // this is our team members array:
 const team =[ {
     name: 'Wayne Barnett',
@@ -32,3 +31,6 @@ const team =[ {
 }, 
 ];
 
+for (let key of team) {
+    console.log(key.name, key.role, key.avatar);
+};
