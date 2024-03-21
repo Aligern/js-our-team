@@ -41,19 +41,23 @@ createList();
 // here we print our list 
 function createList(){
     const elContainer = document.getElementById('contenitore');
-    const elUl = document.createElement('ul');
-    const elLi = document.createElement('li');
-    elContainer.appendChild(elUl);
+    const eldiv = document.createElement('div');
+    eldiv.classList.add('row','d-flex', 'justify-content-center')
+    elContainer.appendChild(eldiv);
     // for the lenght of our array we do a print into our HTML:
     for (let i = 0; i < team.length; i++) {
-        const elLi = document.createElement('li');
+        const elCard = document.createElement('div');
+        elCard.classList.add('col-3','bg-white','text-center','card', 'mt-3', 'ms-4', 'pb-2');
         const elImg = document.createElement('img');
         elImg.src = team[i].avatar;
-        elLi.innerHTML =`
+        elCard.innerHTML =`
+        <div class="card-body bg-white">
         Name: ${team[i].name},
         Role: ${team[i].role},
-    `
-    elLi.appendChild(elImg);// here we print the avatars into our "elLI"
-    elUl.appendChild(elLi); //here we do the print on the HTML
+        </div>
+        `;
+    elCard.appendChild(elImg);
+    // here we print the avatars into our "elLI"
+    eldiv.appendChild(elCard); //here we do the print on the HTML
     }
 };

@@ -3,7 +3,12 @@ ul {
     list-style: none;
 }
 
-.wrapper {
-    
+img {
+    width: 100%;
+    display: block;
+}
+
+body {
+    background-color: bisque;
 }
 
