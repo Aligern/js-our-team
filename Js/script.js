@@ -31,35 +31,48 @@ const team =[ {
 }, 
 ];
 
-// here we print on console name, role and avatar for each team member:
+// here we print on console the name, role and avatar for each team member:
 for (let key of team) {
     console.log(key.name, key.role, key.avatar);
 };
 
 createList();
 
+// starting to create our add button
+const testata = document.getElementById('testata');
+testata.classList.add('pb-2');
+const addBtn = document.createElement('button');
+addBtn.classList.add('btn','btn-outline-primary');
+addBtn.textContent = 'Aggiungi profilo';
+testata.appendChild(addBtn);
+
+
 // here we print our list 
 function createList(){
     const elContainer = document.getElementById('contenitore');
+    elContainer.classList.add('p-5')
     const eldiv = document.createElement('div');
-    eldiv.classList.add('row','d-flex', 'justify-content-center')
+    eldiv.classList.add('row','d-flex', 'justify-content-center','gap-3')
     elContainer.appendChild(eldiv);
     // for the lenght of our array we do a print into our HTML:
     for (let i = 0; i < team.length; i++) {
         const elCard = document.createElement('div');
-        elCard.classList.add('col-3','bg-white','text-center','card', 'mt-3', 'ms-4');
+        elCard.classList.add('col-3','bg-white','text-center','card');
         const elImg = document.createElement('img');
         elImg.src = team[i].avatar;
+        // here we set the printing order of our elements into our HTML:
         elCard.innerHTML =`
         <div class="card-body bg-white">
         <img src="${team[i].avatar}" alt="">
-        <p> ${team[i].name}, 
-        <br>
+        <h4 class="pt-2">
+        ${team[i].name} 
+        </h4>
+        <p>
         ${team[i].role} 
         </p>
         </div>
         `;
     // here we print the avatars into our "elCard"
     eldiv.appendChild(elCard); //here we do the print on the HTML
-    }
+}
 };
