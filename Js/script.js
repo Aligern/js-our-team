@@ -12,22 +12,22 @@ const team =[ {
 {
     name: 'Walter Gordon',
     role:   'Office Manager',
-    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/walter-gordon-office-manager.jpg'
 }, 
 {
     name: 'Angela Lopez',
     role:   'Social Media Manager',
-    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/angela-lopez-social-media-manager.jpg'
 }, 
 {
     name: 'Scott Estrada',
     role:   'Developer',
-    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/scott-estrada-developer.jpg'
 }, 
 {
     name: 'Barbara Ramos',
     role:   'Graphic Designer',
-    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/barbara-ramos-graphic-designer.jpg'
 }, 
 ];
 
