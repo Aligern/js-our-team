@@ -2,32 +2,32 @@
 const team =[ {
     name: 'Wayne Barnett',
     role:   'Founder & CEO',
-    avatar: ' wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
 },
 {
     name: 'Angela Caroll',
     role:   'Chief Editor',
-    avatar: 'angela-caroll-chief-editor.jpg'
+    avatar: './img/angela-caroll-chief-editor.jpg'
 }, 
 {
     name: 'Walter Gordon',
     role:   'Office Manager',
-    avatar: ' wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
 }, 
 {
     name: 'Angela Lopez',
     role:   'Social Media Manager',
-    avatar: ' wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
 }, 
 {
     name: 'Scott Estrada',
     role:   'Developer',
-    avatar: ' wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
 }, 
 {
     name: 'Barbara Ramos',
     role:   'Graphic Designer',
-    avatar: ' wayne-barnett-founder-ceo.jpg'
+    avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
 }, 
 ];
 
@@ -38,18 +38,22 @@ for (let key of team) {
 
 createList();
 
+// here we print our list 
 function createList(){
     const elContainer = document.getElementById('contenitore');
     const elUl = document.createElement('ul');
     const elLi = document.createElement('li');
     elContainer.appendChild(elUl);
+    // for the lenght of our array we do a print into our HTML:
     for (let i = 0; i < team.length; i++) {
         const elLi = document.createElement('li');
+        const elImg = document.createElement('img');
+        elImg.src = team[i].avatar;
         elLi.innerHTML =`
         Name: ${team[i].name},
         Role: ${team[i].role},
-        Avatar ${team[i].avatar}
     `
-    elUl.appendChild(elLi);
+    elLi.appendChild(elImg);// here we print the avatars into our "elLI"
+    elUl.appendChild(elLi); //here we do the print on the HTML
     }
 };
