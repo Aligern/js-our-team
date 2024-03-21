@@ -1,5 +1,5 @@
 // this is our team members array:
-const team =[ {
+const team = [ {
     name: 'Wayne Barnett',
     role:   'Founder & CEO',
     avatar: ' ./img/wayne-barnett-founder-ceo.jpg'
@@ -28,7 +28,7 @@ const team =[ {
     name: 'Barbara Ramos',
     role:   'Graphic Designer',
     avatar: ' ./img/barbara-ramos-graphic-designer.jpg'
-}, 
+}
 ];
 
 // here we print on console the name, role and avatar for each team member:
@@ -40,7 +40,6 @@ for (let key of team) {
 createList();
 createAddBtn();
 
-
 // starting to create our add button
 function createAddBtn () {
     const testata = document.getElementById('testata');
@@ -49,20 +48,37 @@ function createAddBtn () {
     addBtn.classList.add('btn','btn-outline-primary');
     addBtn.textContent = 'Aggiungi profilo';
     testata.appendChild(addBtn);
+
     //we addEventListener to our button:
     addBtn.addEventListener('click', function() {
         //we create our form into our HTML at the 'click'
+
         let addFormDiv = document.createElement('div'); // let's create a <div>
-        addFormDiv.classList.add('m-auto'); // we give attributes to our <div>
+        addFormDiv.classList.add('d-flex','flex-column', 'justify-content-center' ); // we give attributes to our <div>
+
         let addFormLabel = document.createElement('label'); // we do the same for the label
-        addFormLabel.classList.add('form-label','fw-bold','text-uppercase');
-        addFormLabel.textContent = 'Benvenuto';
-        let addFormInput = document.createElement('input');
+        addFormLabel.classList.add('form-label','fw-bold','text-uppercase','text-start');
+        addFormLabel.textContent = 'Benvenuto nuovo utente!';
+
+        let addFormInput = document.createElement('input'); // this is our 1st input form
         addFormInput.type = 'text';
         addFormInput.placeholder = 'Nome e Cognome';
         addFormInput.classList.add('form-control', 'w-25');
+
+        let addFormInput2 = document.createElement('input'); // this is the 2nd input form
+        addFormInput2.type = 'text';
+        addFormInput2.placeholder = 'Ruolo nel team';
+        addFormInput2.classList.add('form-control', 'w-25', 'mt-2');
+        
+        let addImgInput = document.createElement('input');
+        addImgInput.type = 'file';
+        addImgInput.placeholder = 'Inserisci una tua foto';
+        addImgInput.classList.add('mt-2');
+        
         addFormDiv.appendChild(addFormLabel);
         addFormDiv.appendChild(addFormInput);
+        addFormDiv.appendChild(addFormInput2);
+        addFormDiv.appendChild(addImgInput);
         testata.appendChild(addFormDiv);
     });
 };
@@ -84,9 +100,9 @@ function createList(){
         elCard.innerHTML =`
         <div class="card-body bg-white">
         <img src="${team[i].avatar}" alt="">
-        <h4 class="pt-2">
+        <p class="pt-2 text-uppercase fw-bold">
         ${team[i].name} 
-        </h4>
+        </p>
         <p>
         ${team[i].role} 
         </p>
