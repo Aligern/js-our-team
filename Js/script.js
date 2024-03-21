@@ -36,16 +36,33 @@ for (let key of team) {
     console.log(key.name, key.role, key.avatar);
 };
 
+//the calls for our functions:
 createList();
+createAddBtn();
+
 
 // starting to create our add button
-const testata = document.getElementById('testata');
-testata.classList.add('pb-2');
-const addBtn = document.createElement('button');
-addBtn.classList.add('btn','btn-outline-primary');
-addBtn.textContent = 'Aggiungi profilo';
-testata.appendChild(addBtn);
-
+function createAddBtn () {
+    const testata = document.getElementById('testata');
+    testata.classList.add('pb-2');
+    const addBtn = document.createElement('button');
+    addBtn.classList.add('btn','btn-outline-primary');
+    addBtn.textContent = 'Aggiungi profilo';
+    testata.appendChild(addBtn);
+    //we addEventListener to our button:
+    addBtn.addEventListener('click', function() {
+        let addFormDiv = document.createElement('div');
+        addFormDiv.classList.add('text-center', 'm-auto');
+        let addFormLabel = document.createElement('label');
+        addFormLabel.htmlFor = 'try';
+        addFormLabel.classList.add('form-label');
+        let addFormInput = document.createElement('input');
+        addFormInput.type = 'text';
+        addFormInput.classList.add('form-control');
+        addFormDiv.appendChild(addFormLabel);
+        addFormDiv.appendChild(addFormInput);
+    });
+};
 
 // here we print our list 
 function createList(){
@@ -72,7 +89,6 @@ function createList(){
         </p>
         </div>
         `;
-    // here we print the avatars into our "elCard"
     eldiv.appendChild(elCard); //here we do the print on the HTML
 }
 };
