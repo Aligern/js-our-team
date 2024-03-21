@@ -60,28 +60,30 @@ function createAddBtn () {
         addFormLabel.classList.add('form-label','fw-bold','text-uppercase','text-start');
         addFormLabel.textContent = 'Benvenuto nuovo utente!';
 
-        let addFormInput = document.createElement('input'); // this is our 1st input form
-        addFormInput.type = 'text';
-        addFormInput.placeholder = 'Nome e Cognome';
-        addFormInput.classList.add('form-control', 'w-25');
+        let nameInput = document.createElement('input'); // this is our 1st input form
+        nameInput.type = 'text';
+        nameInput.placeholder = 'Nome e Cognome';
+        nameInput.classList.add('form-control', 'w-25');
 
-        let addFormInput2 = document.createElement('input'); // this is the 2nd input form
-        addFormInput2.type = 'text';
-        addFormInput2.placeholder = 'Ruolo nel team';
-        addFormInput2.classList.add('form-control', 'w-25', 'mt-2');
+        let roleInput = document.createElement('input'); // this is the 2nd input form
+        roleInput.type = 'text';
+        roleInput.placeholder = 'Ruolo nel team';
+        roleInput.classList.add('form-control', 'w-25', 'mt-2');
         
-        let addImgInput = document.createElement('input');
+        let addImgInput = document.createElement('input'); // img input here
         addImgInput.type = 'file';
         addImgInput.placeholder = 'Inserisci una tua foto';
         addImgInput.classList.add('mt-2');
-        
+
+        // we append everything into our <div>
         addFormDiv.appendChild(addFormLabel);
-        addFormDiv.appendChild(addFormInput);
-        addFormDiv.appendChild(addFormInput2);
+        addFormDiv.appendChild(nameInput);
+        addFormDiv.appendChild(roleInput);
         addFormDiv.appendChild(addImgInput);
         testata.appendChild(addFormDiv);
     });
 };
+
 
 // here we print our list 
 function createList(){
