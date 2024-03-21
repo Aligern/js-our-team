@@ -51,16 +51,19 @@ function createAddBtn () {
     testata.appendChild(addBtn);
     //we addEventListener to our button:
     addBtn.addEventListener('click', function() {
-        let addFormDiv = document.createElement('div');
-        addFormDiv.classList.add('text-center', 'm-auto');
-        let addFormLabel = document.createElement('label');
-        addFormLabel.htmlFor = 'try';
-        addFormLabel.classList.add('form-label');
+        //we create our form into our HTML at the 'click'
+        let addFormDiv = document.createElement('div'); // let's create a <div>
+        addFormDiv.classList.add('m-auto'); // we give attributes to our <div>
+        let addFormLabel = document.createElement('label'); // we do the same for the label
+        addFormLabel.classList.add('form-label','fw-bold','text-uppercase');
+        addFormLabel.textContent = 'Benvenuto';
         let addFormInput = document.createElement('input');
         addFormInput.type = 'text';
-        addFormInput.classList.add('form-control');
+        addFormInput.placeholder = 'Nome e Cognome';
+        addFormInput.classList.add('form-control', 'w-25');
         addFormDiv.appendChild(addFormLabel);
         addFormDiv.appendChild(addFormInput);
+        testata.appendChild(addFormDiv);
     });
 };
 
